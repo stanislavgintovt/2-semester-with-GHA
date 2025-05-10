@@ -1,6 +1,6 @@
 ﻿namespace RoutersConfigure
 {
-    internal class Routers
+    public class Routers
     {
         /// <summary>
         /// Class, representing graph
@@ -25,7 +25,7 @@
                         }
                         if (!vertices.Contains(edges[i].Node2))
                         {
-                            vertices.Add(edges[i].Node1);
+                            vertices.Add(edges[i].Node2);
                             count++;
                         }
                     }
@@ -140,13 +140,13 @@
                 while (wasAnythingMarked)
                 {
                     wasAnythingMarked = false;
-                    foreach (Edge edge in edges)
+                    for (int i = 0; i < edges.Count; i++)
                     {
-                        if (isInConnect[edge.Node1 - 1] ^ isInConnect[edge.Node2 - 1])
+                        if (isInConnect[edges[i].Node1 - 1] ^ isInConnect[edges[i].Node2 - 1])
                         {
                             wasAnythingMarked = true;
-                            isInConnect[edge.Node1 - 1] = true;
-                            isInConnect[edge.Node2 - 1] = true;
+                            isInConnect[edges[i].Node1 - 1] = true;
+                            isInConnect[edges[i].Node2 - 1] = true;
                         }
                     }
                 }

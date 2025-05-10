@@ -1,6 +1,6 @@
 ﻿namespace RoutersConfigure
 {
-    class Program
+    public class Program
     {
         /// <summary>
         /// Function for parsing graph from file
@@ -10,7 +10,12 @@
         /// <returns>Graph of net of routers</returns>
         public static Routers.Graph ReadGraph(string path)
         {
-            string[] lines = File.ReadAllLines(path);
+            string text = File.ReadAllText(path);
+            return ReadGraphFromString(text);
+        }
+        public static Routers.Graph ReadGraphFromString(string graphInString)
+        {
+            string[] lines = graphInString.Split("\n");
             Routers.Graph graph = new();
             foreach (string line in lines)
             {
