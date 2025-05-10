@@ -23,6 +23,6 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore Routers\RoutersConfigure\RoutersConfigure.sln
     - name: Build
-      run: dotnet build --no-restore Debug Routers\RoutersConfigure\RoutersConfigure\RoutersConfigure.csproj
+      run: dotnet build --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal Routers\RoutersConfigure\RoutersTests\RoutersTests.csproj
+      run: dotnet test --no-build --verbosity normal
