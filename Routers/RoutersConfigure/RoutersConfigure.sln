@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoutersConfigure", "RoutersConfigure\RoutersConfigure.csproj", "{D0A97260-952F-437B-8D4E-7B55E967FDBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoutersTests", "RoutersTests\RoutersTests.csproj", "{68780953-08EF-4A40-83C8-45DF0BD3B1CE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D0A97260-952F-437B-8D4E-7B55E967FDBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0A97260-952F-437B-8D4E-7B55E967FDBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0A97260-952F-437B-8D4E-7B55E967FDBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0A97260-952F-437B-8D4E-7B55E967FDBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68780953-08EF-4A40-83C8-45DF0BD3B1CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68780953-08EF-4A40-83C8-45DF0BD3B1CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68780953-08EF-4A40-83C8-45DF0BD3B1CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68780953-08EF-4A40-83C8-45DF0BD3B1CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F050C7CA-B4C8-40F3-8151-5CCC03719181}
+	EndGlobalSection
+EndGlobal
