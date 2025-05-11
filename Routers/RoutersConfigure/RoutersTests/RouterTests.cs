@@ -3,13 +3,17 @@ namespace RoutersTests
 {
     public class Tests
     {
-        List<string> testExamplesAreConnective = [];
-        List<string> testExamplesAreNotConnective = [];
-        List<string> testExamplesHaveCycle = [];
-        List<string> testExamplesHaveNotCycle = [];
+        List<string> testExamplesAreConnective;
+        List<string> testExamplesAreNotConnective;
+        List<string> testExamplesHaveCycle;
+        List<string> testExamplesHaveNotCycle;
         [SetUp]
         public void Setup()
         {
+            testExamplesAreConnective = [];
+            testExamplesAreNotConnective = [];
+            testExamplesHaveCycle = [];
+            testExamplesHaveNotCycle = [];
             testExamplesAreNotConnective.Add(
                 "1: 2 (1), 3 (1)\n" +
                 "2: 3 (1)\n" +
@@ -26,11 +30,11 @@ namespace RoutersTests
                 "3: 4 (1), 5 (1)\n" +
                 "4: 5 (1)");
             testExamplesHaveNotCycle.Add(
-                "1: 2 (1), 3 (1)\n");
+                "1: 2 (1), 3 (1)");
         }
 
         [Test]
-        public void TestsOfCorrectWorkOfConnectivityCheck()
+        public void TestsForConnectivityCheck()
         {
             foreach (string testString in testExamplesAreNotConnective)
             {
@@ -42,16 +46,14 @@ namespace RoutersTests
             }
         }
         [Test]
-        public void TestsOfCorrectWorkOfCyclicCheck()
+        public void TestsForCyclicCheck()
         {
-            foreach (string testString in testExamplesAreNotConnective)
+            foreach (string testString in testExamplesHaveNotCycle)
             {
-                Assert.That(!Program.ReadGraphFromString(testString).IsConnective());
+                Assert.That(!Program.ReadGraphFromString(testString).HasCycle());
             }
-            foreach (string testString in testExamplesAreConnective)
-            {
-                Assert.That(Program.ReadGraphFromString(testString).IsConnective());
-            }
+            Assert.That((!Program.ReadGraphFromString(testExamplesHaveCycle[1]).HasCycle()));
+            Assert.That(Program.ReadGraphFromString(testExamplesHaveCycle[1]).HasCycle(4));
         }
     }
 }

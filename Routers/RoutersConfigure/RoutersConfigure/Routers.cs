@@ -166,9 +166,8 @@
             /// It could be better if graph was represented as adjacency matrix or as real graph 
             /// </summary>
             /// <returns></returns>
-            public bool HasCycle()
+            public bool HasCycle(int currentNode = 1)
             {
-                int currentNode = 1;
                 Stack<int> cycle = new();
                 int[] colorOfNodes = new int[CountOfVertices];
                 cycle.Push(currentNode);
