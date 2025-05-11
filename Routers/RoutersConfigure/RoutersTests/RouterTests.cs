@@ -20,7 +20,7 @@ namespace RoutersTests
                 "4: 5 (1), 6 (1)\n" +
                 "5: 6 (1)");
             testExamplesAreConnective.Add(
-                "1: 2 (1), 3 (1)\n" +
+                "1: 2 (10), 3 (5)\n" +
                 "2: 3 (1)\n");
             testExamplesHaveCycle.Add(
                 "1: 2 (1), 3 (1)\n" +
@@ -54,6 +54,11 @@ namespace RoutersTests
             }
             Assert.That((!Program.ReadGraphFromString(testExamplesHaveCycle[1]).HasCycle()));
             Assert.That(Program.ReadGraphFromString(testExamplesHaveCycle[1]).HasCycle(4));
+        }
+        [Test]
+        public void TestsForConstructTree()
+        {
+            Assert.That(Program.ReadGraphFromString(testExamplesAreConnective[0]).ConstructTree().ToString().Equals("1: 2 (10), 3 (5)"));
         }
     }
 }

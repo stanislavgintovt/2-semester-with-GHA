@@ -214,7 +214,7 @@
             }
             /// <summary>
             /// Construct tree with no cycles and with max sum of traffic capacity
-            /// Complexity is O(E*(HasCycle complexity))
+            /// Complexity is O(E^3)
             /// </summary>
             /// <returns></returns>
             public Graph ConstructTree()
@@ -226,7 +226,7 @@
                     Edge edge = edges[0];
                     graph.AddEdge(edge);
                     edges.Remove(edge);
-                    if (graph.HasCycle())
+                    if (graph.HasCycle(edge.Node1))
                     {
                         graph.RemoveLastEdge();
                     }
